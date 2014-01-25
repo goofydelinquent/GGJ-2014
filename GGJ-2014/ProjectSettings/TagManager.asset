@@ -66,6 +66,10 @@ TagManager:
     userID: 3
     uniqueID: 1024582385
     locked: 0
+  - name: HatStache
+    userID: 6
+    uniqueID: 469241059
+    locked: 0
   - name: UI
     userID: 5
     uniqueID: 149272721
