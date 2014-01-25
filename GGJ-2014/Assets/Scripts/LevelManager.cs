@@ -57,7 +57,7 @@ public class LevelManager : MonoBehaviour {
 
 
 				//if( cellObj == null ) Debug.Log ("Cell");
-				cellObj.transform.parent = currentLevel.transform;
+				//cellObj.transform.parent = currentLevel.transform;
 
 				gridManager.addCellObject(cellObj.GetComponent<CellObject>(),j,i);
 
@@ -69,7 +69,12 @@ public class LevelManager : MonoBehaviour {
 				            					0,0,0 ), 
 				                            Quaternion.Euler( 0, 0, -rotation ) ) as GameObject;
 
-				gridManager.addGridObject(go.GetComponent<GridObject>(),j,i);
+				GridObject gObj = go.GetComponent<GridObject>();
+				gridManager.addGridObject(gObj,j,i);
+
+				if( gObj.type == GridObjectType.GRIDOBJECTTYPE_GUMSHOE ){
+					gridManager.gumShoe = gObj as GumShoe;
+				}
 
 				//go.transform.parent = cellObj.transform;
 				//GridObject gridObject = go.GetComponent<GridObject>();
