@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -115,7 +116,16 @@ public class InGameCore : MonoBehaviour
 		Run (this.currentLevel);
 	}
 
+	public void LevelFinished(){
+		StartCoroutine( CoLevelFinished() );
+	}
 
+	IEnumerator CoLevelFinished()
+	{
+		yield return new WaitForSeconds( 1 );
+
+		this.Next();
+	}
 
 	void Update(){
 

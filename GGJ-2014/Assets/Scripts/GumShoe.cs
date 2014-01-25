@@ -43,6 +43,11 @@ public class GumShoe : GridObject {
 		// Same type - can eat
 		if ( currentCandy == p_candy.candyType ) { return true; }
 
+		if( p_candy.candyType == CandyType.CANDYTYPE_KING && InGameCore.Instance.currentSession.IsMovesSatisfied() )
+		{
+			return true;
+		}
+
 		//TODO rollover
 		if ( ( (int)currentCandy - (int)p_candy.candyType ) == 1 ) {
 			return true;
@@ -79,5 +84,9 @@ public class GumShoe : GridObject {
 		Destroy( go.gameObject );
 
 		isEating = false;
+
+		if( currentCandy == CandyType.CANDYTYPE_KING ){
+			InGameCore.Instance.LevelFinished();
+		}
 	}
 }

@@ -48,8 +48,8 @@ public class Session : MonoBehaviour {
 
 	public bool IsMovesSatisfied()
 	{
-		Debug.Log ("Count " + moves.Count);
-		return( this.currentMoves >= (int)(long)moves[this.movesIndex]  );
+		Debug.Log ("Count " + this.moves);
+		return( this.currentMoves >= 2 /*(int)(long)moves[this.movesIndex] */ );
 		
 	}
 

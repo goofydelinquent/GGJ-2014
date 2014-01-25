@@ -116,7 +116,7 @@ MonoBehaviour:
   currentSession: {fileID: 0}
   currentLevel: 
   levelQueue: []
-  debug: 1
+  debug: 0
   debugLevel: Levels/4x4/1
 --- !u!1 &487184735
 GameObject:
