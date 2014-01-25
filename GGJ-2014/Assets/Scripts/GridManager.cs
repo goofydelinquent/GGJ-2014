@@ -38,7 +38,11 @@ public class GridManager : MonoBehaviour {
 
 		Debug.Log( "Clicked cell at " + obj.grid_x + " " + obj.grid_y );
 
+		if( gumShoe.isEating ) return;
+
 		CellObject gumShoeCell = (gumShoe.transform.parent).gameObject.GetComponent<CellObject>();
+
+
 
 		if( !GridManager.IsAdjacent( obj, gumShoeCell ) ){
 
