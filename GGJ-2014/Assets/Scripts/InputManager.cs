@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour {
 	}
 
 	void Update () {
+		
 
 		// 0 - Left, 1 - Right, 2 - Middle 
 		if( Input.GetMouseButtonUp( 0 ) ) {
@@ -23,12 +24,12 @@ public class InputManager : MonoBehaviour {
 			if ( collider != null  )
 			{
 				Debug.Log( "Collided: " + collider.name );
-				Candy c = collider.GetComponent<Candy>();
-				GridObject go = collider.GetComponent<GridObject>();
-				if ( c != null ) {
+				//Candy c = collider.GetComponent<Candy>();
+				CellObject go = collider.GetComponent<CellObject>();
+				//if ( c != null ) {
 
 
-				}
+				//}
 
 				if ( go != null ) {
 

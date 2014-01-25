@@ -4,9 +4,12 @@ using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour {
 
+	public GameObject cellObjectPrefab;
 	public List<GameObject> m_candyPrefabList = new List<GameObject>();
 	private float m_gridPadding = 0.5f;
 	private float m_candySize = 1f;
+
+	public GridManager gridManager;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +21,10 @@ public class LevelManager : MonoBehaviour {
 
 		int x = (int)(long)meta[ "grid_x" ];
 		int y = (int)(long)meta[ "grid_y" ];
+
+		gridManager.dimension = new Vector2(x,y);
+
+
 		float rotation = (float)(double)meta[ "rotation" ];
 
 		Debug.Log ( "Grid size: " + x + " by " + y + " - rotated by: " + rotation );
@@ -30,7 +37,7 @@ public class LevelManager : MonoBehaviour {
 
 		Debug.Log( "Offset: " + offset );
 
-		GameObject currentLevel = new GameObject( " GeneratedLevel" );
+		GameObject currentLevel = new GameObject( "GeneratedLevel" );
 		currentLevel.transform.position = Vector3.zero;
 
 
@@ -40,20 +47,36 @@ public class LevelManager : MonoBehaviour {
 			for ( int j = 0; j < x; j++ ) {
 
 				int type = (int)(long)row[ j ];
+
+
+				GameObject cellObj = Instantiate( cellObjectPrefab,
+				                                new Vector3( 
+				            ( j * ( m_gridPadding + m_candySize ) ) - offset.x, 
+				            ( i * -( m_gridPadding + m_candySize ) ) + offset.y, 
+				            0f ), Quaternion.Euler( 0, 0, -rotation ) ) as GameObject;
+
+
+				//if( cellObj == null ) Debug.Log ("Cell");
+				cellObj.transform.parent = currentLevel.transform;
+
+				gridManager.addCellObject(cellObj.GetComponent<CellObject>(),j,i);
+
 				if ( type < 0 || type >= numTypes  ) { continue; }
+
 
 				GameObject go = Instantiate( m_candyPrefabList[ type ],
 				                            new Vector3( 
-				            					( j * ( m_gridPadding + m_candySize ) ) - offset.x, 
-				            					( i * -( m_gridPadding + m_candySize ) ) + offset.y, 
-				            					0f ), 
+				            					0,0,0 ), 
 				                            Quaternion.Euler( 0, 0, -rotation ) ) as GameObject;
 
-				go.transform.parent = currentLevel.transform;
+				gridManager.addGridObject(go.GetComponent<GridObject>(),j,i);
 
-				GridObject gridObject = go.GetComponent<GridObject>();
-				gridObject.grid_x = j;
-				gridObject.grid_y = i;
+				//go.transform.parent = cellObj.transform;
+				//GridObject gridObject = go.GetComponent<GridObject>();
+				//gridObject.grid_x = j;
+				//gridObject.grid_y = i;
+
+
 
 			}
 		}
