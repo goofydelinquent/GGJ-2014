@@ -7,6 +7,8 @@ public class GridManager : MonoBehaviour {
 	public List<CellObject> cellObjects;
 	public Vector2 dimension = Vector2.zero;
 
+	public GumShoe gumShoe;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -19,18 +21,38 @@ public class GridManager : MonoBehaviour {
 
 	public void addCellObject(CellObject obj,int col,int row){
 		cellObjects.Add(obj);
+		obj.transform.parent = this.transform;
 		obj.grid_x = col;
 		obj.grid_y = row;
 	}
 
 	public void addGridObject(GridObject obj,int col,int row){
-		Debug.Log ("LOG: " + GridManager.Get1DCoordinate(this.dimension,col,row));
 		cellObjects[GridManager.Get1DCoordinate(this.dimension,col,row)].addGridObject(obj); 
 	} 
 
 	public static int Get1DCoordinate(Vector2 dimension,int col,int row){
 		return (row * (int)dimension.y) + col;
 	}
+
+	public void OnClickedCell( CellObject obj ){
+
+		Debug.Log("clicked cell at " + obj.grid_x + " " + obj.grid_y);
+
+		CellObject gumShoeCell = (gumShoe.transform.parent).gameObject.GetComponent<CellObject>();
+
+		if( !GridManager.IsAdjacent( obj, gumShoeCell ) ){
+			//not adjacent return 
+			return;
+		}
+
+		//check can consume here
+	}
+
+	public static bool IsAdjacent( CellObject obj1, CellObject obj2 ){
+		return( Mathf.Abs( obj1.grid_x - obj2.grid_x ) + Mathf.Abs( obj1.grid_y - obj2.grid_y ) == 1 );
+	}
+
+
 }
 
 

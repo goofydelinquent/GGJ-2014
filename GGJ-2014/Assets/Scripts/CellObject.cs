@@ -17,16 +17,22 @@ public class CellObject : MonoBehaviour {
 	
 	}
 
-	private void isEmpty(){
-
+	private bool isEmpty(){
+		return (gridObject == null);
 	}
 
 	public void addGridObject(GridObject obj){
 		this.gridObject = obj;
-
 		obj.transform.parent = this.transform;
 		obj.transform.localPosition = Vector3.zero;
+	}
 
-		// add transform here
+	public void OnClick(){
+		Debug.Log("onclick");
+
+		if(isEmpty()) return;
+		if( gridObject.type != GridObjectType.GRIDOBJECTTYPE_CANDY ) return;
+
+		this.SendMessageUpwards( "OnClickedCell" , this );
 	}
 }

@@ -71,6 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid_x: -1
   grid_y: -1
+  type: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,6 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid_x: -1
   grid_y: -1
+  type: 1
   candyType: 0
 --- !u!1001 &100100000
 Prefab:
