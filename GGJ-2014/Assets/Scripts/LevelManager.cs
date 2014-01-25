@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour {
 	public void LoadResource(Session session,string levelName){
 
 		GridManager gridManager = session.gridManager;
-
+		Debug.Log ("LevelName:" + levelName);
 		TextAsset text = Resources.Load( levelName ) as TextAsset;
 		Debug.Log( text.text );
 		
