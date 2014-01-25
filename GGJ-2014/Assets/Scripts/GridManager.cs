@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 public class GridManager : MonoBehaviour {
 
-	public List<CellObject> cellObjects;
+	public List<CellObject> cellObjects = new List<CellObject>();
 	public Vector2 dimension = Vector2.zero;
 
 	public GumShoe gumShoe;
 
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
