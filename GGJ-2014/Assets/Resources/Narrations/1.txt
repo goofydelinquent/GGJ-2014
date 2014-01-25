@@ -1,0 +1,4 @@
+﻿[
+	[ "The quick brown fox jumped\nover the lazy dog.", 5.0 ],
+	[ "Just need something to say...", 3.2 ]
+]
