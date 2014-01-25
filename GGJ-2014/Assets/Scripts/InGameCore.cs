@@ -8,14 +8,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+
+
 
 public class InGameCore : MonoBehaviour
 {
 	public LevelManager levelManager;
 	public Session currentSession;
+	public string currentLevel;
 
-	public static string levelToLoad = "Levels/1";
+	public static List<string> levelToLoad = new List<string>();
+	public List<string> levelQueue = new List<string>();
+
+	public bool debug = true;
+	public string debugLevel = "Levels/4x4/1";
+
+	//public UnityEngine.Random ran = new UnityEngine.Random();
 
 	private static InGameCore _instance = null;
     public static InGameCore Instance { get {
@@ -29,13 +39,71 @@ public class InGameCore : MonoBehaviour
 	}
 
 	void Start(){
-		Run ();
+
+		FillUpLevelQueue( InGameCore.levelToLoad );
+		Next ();
+
 	}
 	
-	public void Run(){
+	private void Run(string level)
+	{
 		GameObject go = new GameObject("Session");
 		this.currentSession = go.AddComponent<Session>();
-		this.levelManager.LoadResource( this.currentSession , InGameCore.levelToLoad );
+
+		this.currentLevel = level;
+		this.levelManager.LoadResource( this.currentSession , this.currentLevel );
+	}
+
+	public void Next(){
+		Debug.Log ("Next: " + levelQueue.Count);
+
+		if( currentSession != null ){
+			Destroy( currentSession );
+		}
+
+	
+
+		if( debug )
+		{
+			Run ( debugLevel);
+		}
+		else
+		{
+			if( NoMoreLevels() )
+			{
+				SequenceCompleted();
+				return;
+			}
+			Run ( GetLevelRandom() );
+		}
+	}
+
+	private void SequenceCompleted(){
+		Application.LoadLevel("Levelselection");
+	}
+
+	private bool NoMoreLevels(){
+		return levelQueue.Count == 0;
+	}
+
+	public void FillUpLevelQueue(List<string> paths){
+		levelQueue = paths;
+	}
+
+	public string GetLevelRandom(){
+		int count = RemainingLevels();
+		int index = UnityEngine.Random.Range( 0 , count - 1);
+		return GetLevelAt(index);
+	}
+	
+	public string GetLevelAt(int index){
+		string path = levelQueue[index];
+		levelQueue.RemoveAt(index);
+		return path;
+	}
+
+	public int RemainingLevels(){
+		return levelQueue.Count;
 	}
 
 	public void Reset(){
@@ -44,17 +112,23 @@ public class InGameCore : MonoBehaviour
 			Destroy( currentSession );
 		}
 
-		Run ();
-
+		Run (this.currentLevel);
 	}
 
-	void Update()
-	{
 
-		if( Input.GetKeyDown(KeyCode.Space) )
+
+	void Update(){
+
+		if( Input.GetKeyDown(KeyCode.R) )
 		{
-			Debug.Log("RESET");
-			//Reset();
+			//Debug.Log("RESET");
+			Reset();
+		}
+
+		if( Input.GetKeyDown(KeyCode.N) )
+		{
+			//Debug.Log("RESET");
+			Next();
 		}
 	}
 

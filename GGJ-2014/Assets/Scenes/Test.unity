@@ -114,6 +114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelManager: {fileID: 1255556593}
   currentSession: {fileID: 0}
+  currentLevel: 
+  levelQueue: []
+  debug: 1
+  debugLevel: Levels/4x4/1
 --- !u!1 &487184735
 GameObject:
   m_ObjectHideFlags: 0
