@@ -6,13 +6,14 @@ public class GumShoe : GridObject {
 	public CandyType currentCandy = 0;
 	public GameObject topStache = null;
 	public GameObject topHat = null;
+	public Animator animator = null;
 
 	private CellObject m_targetCell = null;
 
 
 	// Use this for initialization
 	void Start (){
-
+		animator = this.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -27,8 +28,10 @@ public class GumShoe : GridObject {
 		CellObject candycell = candy.transform.parent.gameObject.GetComponent<CellObject>();
 		m_targetCell = candycell;
 
-		StartCoroutine( "ConsumeAnimation" );
+		//prepare to back
+		animator.SetTrigger( "PrepareToEat" );
 
+		StartCoroutine( "ConsumeAnimation" );
 	}
 
 	public bool CanConsume( Candy p_candy ) {
@@ -61,6 +64,8 @@ public class GumShoe : GridObject {
 			yield return new WaitForEndOfFrame();
 
 		}
+
+		animator.SetTrigger( "PopIn" );
 
 		CellObject gumShoeCell = this.transform.parent.gameObject.GetComponent<CellObject>();
 

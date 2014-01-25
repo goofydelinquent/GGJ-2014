@@ -6,10 +6,8 @@ public class LevelManager : MonoBehaviour {
 
 	public GameObject cellObjectPrefab;
 	public List<GameObject> m_candyPrefabList = new List<GameObject>();
-	private float m_gridPadding = 0.5f;
-	private float m_candySize = 1f;
-
-
+	private float m_gridPadding = 0.16f;
+	private float m_candySize = 0.8f;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +29,7 @@ public class LevelManager : MonoBehaviour {
 		
 		int x = (int)(long)meta[ "grid_x" ];
 		int y = (int)(long)meta[ "grid_y" ];
+		int moves = (int)(long)meta[ "moves" ];
 		
 
 		float rotation = (float)(double)meta[ "rotation" ];
