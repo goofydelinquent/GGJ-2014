@@ -38,7 +38,7 @@ public class CellObject : MonoBehaviour {
 	}
 
 	public void OnClick(){
-		Debug.Log("onclick");
+		//Debug.Log("onclick");
 
 		if( isEmpty() ) return;
 		if( gridObject.type != GridObjectType.GRIDOBJECTTYPE_CANDY ) return;

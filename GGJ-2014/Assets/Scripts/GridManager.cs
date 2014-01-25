@@ -42,8 +42,6 @@ public class GridManager : MonoBehaviour {
 
 		CellObject gumShoeCell = (gumShoe.transform.parent).gameObject.GetComponent<CellObject>();
 
-
-
 		if( !GridManager.IsAdjacent( obj, gumShoeCell ) ){
 
 			//not adjacent return 
@@ -58,6 +56,7 @@ public class GridManager : MonoBehaviour {
 			Debug.Log( "Can Consume => " + ((int)gumShoe.currentCandy) + " " + ((int)candy.candyType ));
 			gumShoe.Consume( candy );
 
+			InGameCore.Instance.currentSession.IncrementMoves();
 		} else {
 
 			Debug.Log( "Cannot Consume => " + ((int)gumShoe.currentCandy) + " " + ((int)candy.candyType ));

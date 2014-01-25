@@ -35,7 +35,7 @@ public class InGameCore : MonoBehaviour
 		
 
 	void Awake(){
-
+		InGameCore._instance = this;
 	}
 
 	void Start(){
@@ -58,7 +58,7 @@ public class InGameCore : MonoBehaviour
 		Debug.Log ("Next: " + levelQueue.Count);
 
 		if( currentSession != null ){
-			Destroy( currentSession );
+			Destroy( currentSession.gameObject );
 		}
 
 	
@@ -109,7 +109,7 @@ public class InGameCore : MonoBehaviour
 	public void Reset(){
 
 		if( currentSession != null ){
-			Destroy( currentSession );
+			Destroy( currentSession.gameObject );
 		}
 
 		Run (this.currentLevel);
