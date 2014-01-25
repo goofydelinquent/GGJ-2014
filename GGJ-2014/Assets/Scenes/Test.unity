@@ -74,6 +74,46 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &487184735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 487184737}
+  - 114: {fileID: 487184736}
+  m_Layer: 0
+  m_Name: GridManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &487184736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 487184735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed2717d04bd4e040843d52825f6b1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellObjects: []
+  dimension: {x: 0, y: 0}
+--- !u!4 &487184737
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 487184735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.25, y: .75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &549973401
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +251,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115136436}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
+  m_LocalRotation: {x: .408217967, y: -.234569743, z: .109381683, w: .875426114}
   m_LocalPosition: {x: 1.96977925, y: 4.50232935, z: -1.79977036}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -243,11 +283,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bd79cf5ba31403a8a3263eff42dbf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cellObjectPrefab: {fileID: 100000, guid: d24fe4358e41bc544a3f163437181a4d, type: 2}
   m_candyPrefabList:
   - {fileID: 100000, guid: 33d8a89d0734a4d84b619396ba63098a, type: 2}
   - {fileID: 100000, guid: c695eca5a770148bf8fa7698c220f8b0, type: 2}
   - {fileID: 100000, guid: 68a4318377d984d638778f8dbabc6e71, type: 2}
   - {fileID: 100000, guid: 74a27fe43cdfd4d51873304117cf6cdd, type: 2}
+  gridManager: {fileID: 487184736}
 --- !u!4 &1255556594
 Transform:
   m_ObjectHideFlags: 0

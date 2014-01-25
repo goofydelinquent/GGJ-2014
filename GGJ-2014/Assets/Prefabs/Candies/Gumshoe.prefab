@@ -11,8 +11,8 @@ GameObject:
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   - 61: {fileID: 6100000}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 8
   m_Name: Gumshoe
   m_TagString: Untagged
@@ -78,14 +78,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f696b4cddafc437e92a0cc102be2b8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4076391527bbaaa45a2cf84cb19fa18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid_x: -1
   grid_y: -1
+  currentCandy: 0
 --- !u!114 &11400002
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
@@ -94,6 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7339c8747974d4d988a5725b49805628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid_x: -1
+  grid_y: -1
   candyType: 0
 --- !u!1001 &100100000
 Prefab:
