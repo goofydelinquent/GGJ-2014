@@ -36,16 +36,28 @@ public class GridManager : MonoBehaviour {
 
 	public void OnClickedCell( CellObject obj ){
 
-		Debug.Log("clicked cell at " + obj.grid_x + " " + obj.grid_y);
+		Debug.Log( "Clicked cell at " + obj.grid_x + " " + obj.grid_y );
 
 		CellObject gumShoeCell = (gumShoe.transform.parent).gameObject.GetComponent<CellObject>();
 
 		if( !GridManager.IsAdjacent( obj, gumShoeCell ) ){
+
 			//not adjacent return 
+			Debug.Log( "Block is not adjacent" );
 			return;
 		}
 
-		//check can consume here
+		Candy candy = gumShoeCell.gridObject.GetComponent<Candy>();
+
+		if ( gumShoe.CanConsume( candy ) ) {
+
+			Debug.Log( "Can Consume" );
+
+		} else {
+
+			Debug.Log( "Cannot Consume" );
+
+		}
 	}
 
 	public static bool IsAdjacent( CellObject obj1, CellObject obj2 ){

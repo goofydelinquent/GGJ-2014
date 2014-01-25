@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellObjects: []
   dimension: {x: 0, y: 0}
+  gumShoe: {fileID: 0}
 --- !u!4 &487184737
 Transform:
   m_ObjectHideFlags: 0

@@ -17,8 +17,10 @@ public class CellObject : MonoBehaviour {
 	
 	}
 
-	private bool isEmpty(){
+	private bool isEmpty() {
+
 		return (gridObject == null);
+
 	}
 
 	public void addGridObject(GridObject obj){
@@ -30,7 +32,7 @@ public class CellObject : MonoBehaviour {
 	public void OnClick(){
 		Debug.Log("onclick");
 
-		if(isEmpty()) return;
+		if( isEmpty() ) return;
 		if( gridObject.type != GridObjectType.GRIDOBJECTTYPE_CANDY ) return;
 
 		this.SendMessageUpwards( "OnClickedCell" , this );

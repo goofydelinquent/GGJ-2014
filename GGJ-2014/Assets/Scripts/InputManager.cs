@@ -32,8 +32,8 @@ public class InputManager : MonoBehaviour {
 				//}
 
 				if ( go != null ) {
+
 					go.OnClick();
-					Debug.Log( go.grid_x + ", " + go.grid_y );
 
 				}
 			}
