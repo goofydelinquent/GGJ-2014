@@ -1,0 +1,4 @@
+﻿[
+	[ "No longer sure of\nthe time\nor the day,", 2.1 ],
+	[ "but I know I have to push on...", 3.2 ]
+]

@@ -1,0 +1,4 @@
+﻿[
+	[ "It won't be long now.", 0.8 ],
+	[ "The Candy King won't\nknow what's coming....", 3.2 ]
+]
