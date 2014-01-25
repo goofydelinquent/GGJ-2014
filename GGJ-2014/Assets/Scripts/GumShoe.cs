@@ -10,6 +10,7 @@ public class GumShoe : GridObject {
 
 	private CellObject m_targetCell = null;
 
+	public bool isEating = false;
 
 	// Use this for initialization
 	void Start (){
@@ -55,6 +56,8 @@ public class GumShoe : GridObject {
 
 	public IEnumerator ConsumeAnimation()
 	{
+		isEating = true;
+	
 		Vector3 endPosition = m_targetCell.transform.position;
 
 		while( this.transform.position != endPosition ) {
@@ -74,5 +77,7 @@ public class GumShoe : GridObject {
 		m_targetCell.addGridObject( this );
 
 		Destroy( go.gameObject );
+
+		isEating = false;
 	}
 }

@@ -47,4 +47,9 @@ public class CellObject : MonoBehaviour {
 
 		this.SendMessageUpwards( "OnClickedCell" , this );
 	}
+
+	public bool ContainsGumShoe(){
+		if( isEmpty() ) return false;
+		return( gridObject.type == GridObjectType.GRIDOBJECTTYPE_GUMSHOE );
+	} 
 }
