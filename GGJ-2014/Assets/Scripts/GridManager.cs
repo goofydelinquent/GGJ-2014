@@ -52,6 +52,7 @@ public class GridManager : MonoBehaviour {
 		if ( gumShoe.CanConsume( candy ) ) {
 
 			Debug.Log( "Can Consume => " + ((int)gumShoe.currentCandy) + " " + ((int)candy.candyType ));
+			gumShoe.Consume( candy );
 
 		} else {
 

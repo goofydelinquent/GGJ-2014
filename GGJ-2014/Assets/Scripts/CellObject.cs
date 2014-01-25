@@ -29,6 +29,14 @@ public class CellObject : MonoBehaviour {
 		obj.transform.localPosition = Vector3.zero;
 	}
 
+	public GridObject removeGridObject() {
+		GridObject go = gridObject;
+		go.transform.parent = null;
+		gridObject = null;
+		Debug.Log( go );
+		return go;
+	}
+
 	public void OnClick(){
 		Debug.Log("onclick");
 
