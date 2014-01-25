@@ -1,4 +1,4 @@
 ﻿[
-	[ "The quick brown fox jumped\nover the lazy dog.", 5.0 ],
-	[ "Just need something to say...", 3.2 ]
+	[ "First day on the job.", 0.75 ],
+	[ "Heh, my mustache is itchy...", 2.5 ]
 ]
