@@ -356,7 +356,7 @@ GameObject:
   - 4: {fileID: 1376151297}
   - 212: {fileID: 1376151296}
   - 61: {fileID: 1376151295}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: reset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2.30999994, y: 2.05999994}
+  m_Size: {x: 2.30999994, y: 2.1099999}
   m_Center: {x: .0599999987, y: .209999993}
 --- !u!212 &1376151296
 SpriteRenderer:
@@ -552,7 +552,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2133013800}
   - 114: {fileID: 2133013799}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ' Input'
   m_TagString: Untagged
   m_Icon: {fileID: 0}

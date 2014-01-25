@@ -78,10 +78,20 @@ public class GumShoe : GridObject {
 		CellObject gumShoeCell = this.transform.parent.gameObject.GetComponent<CellObject>();
 
 		GridObject go = m_targetCell.removeGridObject();
+		Candy otherCandy = go.GetComponent<Candy>();
+		Candy gumshoeCandy = this.GetComponent<Candy>();
+
+		otherCandy.candyBody.transform.parent = this.transform;
+		GameObject oldBody = gumshoeCandy.candyBody;
+		oldBody.transform.parent = null;
+		gumshoeCandy.candyBody = otherCandy.candyBody;
+
+
 		gumShoeCell.removeGridObject();
 		m_targetCell.addGridObject( this );
 
 		Destroy( go.gameObject );
+		Destroy( oldBody.gameObject );
 
 		isEating = false;
 
