@@ -4,6 +4,7 @@ using System.Collections;
 public class Candy : GridObject {
 	
 	public CandyType candyType = CandyType.CANDYTYPE_1;
+	public GameObject candyBody = null;
 
 	// Use this for initialization
 	void Start () {

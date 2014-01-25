@@ -6,8 +6,8 @@ public class LevelManager : MonoBehaviour {
 
 	public GameObject cellObjectPrefab;
 	public List<GameObject> m_candyPrefabList = new List<GameObject>();
-	private float m_gridPadding = 0.16f;
-	private float m_candySize = 0.8f;
+	private float m_gridPadding = 0.2f;
+	private float m_candySize = 0.85f;
 
 	// Use this for initialization
 	void Start () {

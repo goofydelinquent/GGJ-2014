@@ -6,7 +6,7 @@ public class GumShoe : GridObject {
 	public CandyType currentCandy = 0;
 	public GameObject topStache = null;
 	public GameObject topHat = null;
-	public Animator animator = null;
+	private Animator animator = null;
 
 	private CellObject m_targetCell = null;
 
