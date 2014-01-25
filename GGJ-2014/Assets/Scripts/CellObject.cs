@@ -17,8 +17,10 @@ public class CellObject : MonoBehaviour {
 	
 	}
 
-	private bool isEmpty(){
+	private bool isEmpty() {
+
 		return (gridObject == null);
+
 	}
 
 	public void addGridObject(GridObject obj){
@@ -27,10 +29,18 @@ public class CellObject : MonoBehaviour {
 		obj.transform.localPosition = Vector3.zero;
 	}
 
+	public GridObject removeGridObject() {
+		GridObject go = gridObject;
+		go.transform.parent = null;
+		gridObject = null;
+		Debug.Log( go );
+		return go;
+	}
+
 	public void OnClick(){
 		Debug.Log("onclick");
 
-		if(isEmpty()) return;
+		if( isEmpty() ) return;
 		if( gridObject.type != GridObjectType.GRIDOBJECTTYPE_CANDY ) return;
 
 		this.SendMessageUpwards( "OnClickedCell" , this );

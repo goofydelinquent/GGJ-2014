@@ -4,39 +4,47 @@ using System.Collections;
 public class InputManager : MonoBehaviour {
 
 	public string m_candyLayer = "Candies";
+	public string m_uiLayer = "UI";
 
 	void Start () {
 	
 	}
 
 	void Update () {
-		
 
 		// 0 - Left, 1 - Right, 2 - Middle 
 		if( Input.GetMouseButtonUp( 0 ) ) {
 
-			int cLayer = 1 << LayerMask.NameToLayer( m_candyLayer );
-
 			Vector3 position = Input.mousePosition;
-
 			Vector3 worldPoint = Camera.main.ScreenToWorldPoint( position );
-			Collider2D collider = Physics2D.OverlapPoint( new Vector2( worldPoint.x, worldPoint.y ), cLayer );
+
+
+			int layer = 1 << LayerMask.NameToLayer( m_candyLayer );
+			Vector2 point = new Vector2( worldPoint.x, worldPoint.y );
+			Collider2D collider = Physics2D.OverlapPoint(point, layer );
 			if ( collider != null  )
 			{
 				Debug.Log( "Collided: " + collider.name );
-				//Candy c = collider.GetComponent<Candy>();
 				CellObject go = collider.GetComponent<CellObject>();
-				//if ( c != null ) {
-
-
-				//}
 
 				if ( go != null ) {
+
 					go.OnClick();
-					Debug.Log( go.grid_x + ", " + go.grid_y );
 
 				}
 			}
+
+			layer = 1 << LayerMask.NameToLayer( m_uiLayer );
+			collider = Physics2D.OverlapPoint(point, layer );
+			if ( collider != null  )
+			{
+				if ( collider.name == "reset" ) {
+
+					Application.LoadLevel( Application.loadedLevel );
+
+				}
+			}
+
 
 			// If using 3D collider
 			/*
