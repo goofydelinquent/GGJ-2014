@@ -21,30 +21,25 @@ AnimationClip:
         value: {x: 0, y: 0, z: 0}
         inSlope: {x: 4.125, y: 4.125, z: 4.125}
         outSlope: {x: 4.125, y: 4.125, z: 4.125}
-        tangentMode: 191
+        tangentMode: 8
       - time: .266666681
         value: {x: 1.10000002, y: 1.10000002, z: 1.10000002}
         inSlope: {x: 1.39583302, y: 1.39583302, z: 1.39583302}
         outSlope: {x: 1.39583302, y: 1.39583302, z: 1.39583302}
-        tangentMode: 142614544
+        tangentMode: 1056964608
       - time: .416666657
         value: {x: .899999976, y: .899999976, z: .899999976}
-        inSlope: {x: -.580952644, y: -.580952644, z: -.580952644}
-        outSlope: {x: -.580952644, y: -.580952644, z: -.580952644}
-        tangentMode: 142614544
-      - time: 1
+        inSlope: {x: -.0666668415, y: -.0666668415, z: -.0666668415}
+        outSlope: {x: -.0666668415, y: -.0666668415, z: -.0666668415}
+        tangentMode: 0
+      - time: .5
         value: {x: 1, y: 1, z: 1}
-        inSlope: {x: .085714303, y: .085714303, z: .085714303}
-        outSlope: {x: .085714303, y: .085714303, z: .085714303}
-        tangentMode: 4
-      - time: 1.00016665
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 143631932
+        inSlope: {x: 1.20000017, y: 1.20000017, z: 1.20000017}
+        outSlope: {x: 1.20000017, y: 1.20000017, z: 1.20000017}
+        tangentMode: 144898760
       m_PreInfinity: 2
       m_PostInfinity: 2
-    path: gumshoe_hat
+    path: gumshoe_mustache_top
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -52,31 +47,82 @@ AnimationClip:
         value: {x: 0, y: 0, z: 0}
         inSlope: {x: 4.125, y: 4.125, z: 4.125}
         outSlope: {x: 4.125, y: 4.125, z: 4.125}
-        tangentMode: 55
+        tangentMode: 0
       - time: .266666681
         value: {x: 1.10000002, y: 1.10000002, z: 1.10000002}
         inSlope: {x: 1.39583302, y: 1.39583302, z: 1.39583302}
         outSlope: {x: 1.39583302, y: 1.39583302, z: 1.39583302}
-        tangentMode: 97
+        tangentMode: 142614544
       - time: .416666657
         value: {x: .899999976, y: .899999976, z: .899999976}
-        inSlope: {x: -.580952644, y: -.580952644, z: -.580952644}
-        outSlope: {x: -.580952644, y: -.580952644, z: -.580952644}
-        tangentMode: 10
-      - time: 1
+        inSlope: {x: -.0666668415, y: -.0666668415, z: -.0666668415}
+        outSlope: {x: -.0666668415, y: -.0666668415, z: -.0666668415}
+        tangentMode: 1630499700
+      - time: .5
         value: {x: 1, y: 1, z: 1}
-        inSlope: {x: .085714303, y: .085714303, z: .085714303}
-        outSlope: {x: .085714303, y: .085714303, z: .085714303}
-        tangentMode: 29
-      - time: 1.00016665
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 15
+        inSlope: {x: 1.20000017, y: 1.20000017, z: 1.20000017}
+        outSlope: {x: 1.20000017, y: 1.20000017, z: 1.20000017}
+        tangentMode: 7497068
       m_PreInfinity: 2
       m_PostInfinity: 2
+    path: gumshoe_hat_top
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_IsActive
+    path: gumshoe_hat_top
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_IsActive
+    path: gumshoe_hat
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_IsActive
+    path: gumshoe_mustache_top
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_IsActive
     path: gumshoe_mustache
-  m_FloatCurves: []
+    classID: 1
+    script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -86,7 +132,7 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: 1.00016665
+    m_StopTime: .5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -116,23 +162,18 @@ AnimationClip:
         tangentMode: 10
       - time: .416666657
         value: .899999976
-        inSlope: -.580952644
-        outSlope: -.580952644
+        inSlope: -.0666668415
+        outSlope: -.0666668415
         tangentMode: 10
-      - time: 1
+      - time: .5
         value: 1
-        inSlope: .085714303
-        outSlope: .085714303
-        tangentMode: 10
-      - time: 1.00016665
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 1.20000017
+        outSlope: 1.20000017
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalScale.x
-    path: gumshoe_hat
+    path: gumshoe_mustache_top
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -150,23 +191,18 @@ AnimationClip:
         tangentMode: 10
       - time: .416666657
         value: .899999976
-        inSlope: -.580952644
-        outSlope: -.580952644
+        inSlope: -.0666668415
+        outSlope: -.0666668415
         tangentMode: 10
-      - time: 1
+      - time: .5
         value: 1
-        inSlope: .085714303
-        outSlope: .085714303
-        tangentMode: 10
-      - time: 1.00016665
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 1.20000017
+        outSlope: 1.20000017
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalScale.y
-    path: gumshoe_hat
+    path: gumshoe_mustache_top
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -184,23 +220,18 @@ AnimationClip:
         tangentMode: 10
       - time: .416666657
         value: .899999976
-        inSlope: -.580952644
-        outSlope: -.580952644
+        inSlope: -.0666668415
+        outSlope: -.0666668415
         tangentMode: 10
-      - time: 1
+      - time: .5
         value: 1
-        inSlope: .085714303
-        outSlope: .085714303
-        tangentMode: 10
-      - time: 1.00016665
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 1.20000017
+        outSlope: 1.20000017
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalScale.z
-    path: gumshoe_hat
+    path: gumshoe_mustache_top
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -218,23 +249,18 @@ AnimationClip:
         tangentMode: 10
       - time: .416666657
         value: .899999976
-        inSlope: -.580952644
-        outSlope: -.580952644
+        inSlope: -.0666668415
+        outSlope: -.0666668415
         tangentMode: 10
-      - time: 1
+      - time: .5
         value: 1
-        inSlope: .085714303
-        outSlope: .085714303
-        tangentMode: 10
-      - time: 1.00016665
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 1.20000017
+        outSlope: 1.20000017
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalScale.x
-    path: gumshoe_mustache
+    path: gumshoe_hat_top
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -252,23 +278,18 @@ AnimationClip:
         tangentMode: 10
       - time: .416666657
         value: .899999976
-        inSlope: -.580952644
-        outSlope: -.580952644
+        inSlope: -.0666668415
+        outSlope: -.0666668415
         tangentMode: 10
-      - time: 1
+      - time: .5
         value: 1
-        inSlope: .085714303
-        outSlope: .085714303
-        tangentMode: 10
-      - time: 1.00016665
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 1.20000017
+        outSlope: 1.20000017
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalScale.y
-    path: gumshoe_mustache
+    path: gumshoe_hat_top
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -286,24 +307,75 @@ AnimationClip:
         tangentMode: 10
       - time: .416666657
         value: .899999976
-        inSlope: -.580952644
-        outSlope: -.580952644
+        inSlope: -.0666668415
+        outSlope: -.0666668415
         tangentMode: 10
-      - time: 1
+      - time: .5
         value: 1
-        inSlope: .085714303
-        outSlope: .085714303
-        tangentMode: 10
-      - time: 1.00016665
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 1.20000017
+        outSlope: 1.20000017
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalScale.z
-    path: gumshoe_mustache
+    path: gumshoe_hat_top
     classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_IsActive
+    path: gumshoe_hat_top
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_IsActive
+    path: gumshoe_hat
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_IsActive
+    path: gumshoe_mustache_top
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_IsActive
+    path: gumshoe_mustache
+    classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_Events: []

@@ -55,7 +55,7 @@ public class GumShoe : GridObject {
 		Vector3 endPosition = m_targetCell.transform.position;
 
 		while( this.transform.position != endPosition ) {
-			Vector3 result = Vector3.MoveTowards( this.transform.position, endPosition, 3.5f * Time.deltaTime );
+			Vector3 result = Vector3.MoveTowards( this.transform.position, endPosition, 4.5f * Time.deltaTime );
 			this.transform.position = result;
 
 			yield return new WaitForEndOfFrame();
