@@ -47,15 +47,15 @@ public class GridManager : MonoBehaviour {
 			return;
 		}
 
-		Candy candy = gumShoeCell.gridObject.GetComponent<Candy>();
+		Candy candy = obj.gridObject as Candy;
 
 		if ( gumShoe.CanConsume( candy ) ) {
 
-			Debug.Log( "Can Consume" );
+			Debug.Log( "Can Consume => " + ((int)gumShoe.currentCandy) + " " + ((int)candy.candyType ));
 
 		} else {
 
-			Debug.Log( "Cannot Consume" );
+			Debug.Log( "Cannot Consume => " + ((int)gumShoe.currentCandy) + " " + ((int)candy.candyType ));
 
 		}
 	}
