@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using System.Collections;
 
 public class Session : MonoBehaviour {
 
 	public GridManager gridManager;
+	public List<object> moves = new List<object>();
+
+	public int currentMoves = 0;
+	public int movesIndex = 0;
+	public bool canEatKing = false;
 
 	void Awake(){
 		//add a grid manager to session 
@@ -11,7 +17,7 @@ public class Session : MonoBehaviour {
 		gridManager = go.AddComponent<GridManager>();
 		go.transform.parent = this.transform;
 	}
-
+	
 	// Use this for initialization
 	void Start () {
 
@@ -21,6 +27,30 @@ public class Session : MonoBehaviour {
 	void Update () {
 	}
 
+	public void PurgeMoves(){
+		moves.RemoveAt(0);
+	}
 
+	public void IncrementMoves(){
+		this.currentMoves++;
+		if( !canEatKing ){
+			if( IsMovesSatisfied() ){
+				OnMovesSatisfied();
+			}
+		}
+	}
+
+	private void OnMovesSatisfied(){
+		//moves satisfied event
+		Debug.Log("Moves Satisfied");
+		canEatKing = true;
+	}
+
+	public bool IsMovesSatisfied()
+	{
+		Debug.Log ("Count " + moves.Count);
+		return( this.currentMoves >= (int)(long)moves[this.movesIndex]  );
+		
+	}
 
 }

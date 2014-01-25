@@ -29,9 +29,11 @@ public class LevelManager : MonoBehaviour {
 		
 		int x = (int)(long)meta[ "grid_x" ];
 		int y = (int)(long)meta[ "grid_y" ];
-		int moves = (int)(long)meta[ "moves" ];
-		
+	    List<object> moves = meta[ "moves" ] as List<object>;
+		session.moves = moves;
 
+
+		//var target = origList.ConvertAll(x => (TargetType)x);
 		float rotation = (float)(double)meta[ "rotation" ];
 		
 		Debug.Log ( "Grid size: " + x + " by " + y + " - rotated by: " + rotation );

@@ -110,6 +110,7 @@ public class InputManager : MonoBehaviour {
 							if( obj.ContainsGumShoe() ){
 								mousePhase = MousePhase.Drag_Phase;
 							}
+							
 						}
 					
 				}
@@ -194,7 +195,18 @@ public class InputManager : MonoBehaviour {
 		Vector2 point = new Vector2( worldPoint.x, worldPoint.y );
 		Collider2D collider = Physics2D.OverlapPoint(point, layer );
 		if ( collider != null  ){
+
+			if ( collider.name == "reset" ) {
+				
+				InGameCore.Instance.Reset();
+				return null;
+				
+			}
+
 			CellObject go = collider.GetComponent<CellObject>();
+
+
+
 			return go;
 		}
 
