@@ -16,10 +16,14 @@ public class NarrationManager : MonoBehaviour {
 	public int id = 1;
 
 	public List<AudioSource> audio = new List<AudioSource>();
+	public static int narrationIndex = 1;
+
 
 	// Use this for initialization
 	void Start () 
 	{
+		id = narrationIndex;
+
 		TextAsset text = Resources.Load( "Narrations/" + id ) as TextAsset;
 
 		List<object> narrationData = MiniJSON.Json.Deserialize( text.text ) as List<object>;
@@ -41,6 +45,10 @@ public class NarrationManager : MonoBehaviour {
 		
 	// Update is called once per frame
 	void Update () {
+
+		if( Input.GetMouseButtonDown(0) ){
+			Application.LoadLevel("test");
+		}
 
 		if ( m_currentIndex >= m_narrations.Count ) {
 			return;
@@ -68,6 +76,7 @@ public class NarrationManager : MonoBehaviour {
 
 			if ( m_currentIndex >= m_narrations.Count ) {
 				//TODO load next
+				Application.LoadLevel("test");
 				return;
 			}
 
@@ -75,5 +84,9 @@ public class NarrationManager : MonoBehaviour {
 			m_textMesh.text = m_narrations[ m_currentIndex ];
 
 		}
+
+
 	}
+
+
 }
