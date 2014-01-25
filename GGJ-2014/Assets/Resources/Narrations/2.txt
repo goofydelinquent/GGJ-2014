@@ -1,4 +1,4 @@
 ﻿[
-	[ "Another round,\nso far so good...", 1.1 ],
-	[ "and they still\ndon't know\nwho I am.", 2.8 ]
+	[ "Another round,\nso far so good...", 1.5 ],
+	[ "they still don't know\nwho I am.", 2.8 ]
 ]
