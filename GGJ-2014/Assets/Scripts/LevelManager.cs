@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class LevelManager : MonoBehaviour {
 
 	public List<GameObject> m_candyPrefabList = new List<GameObject>();
-	private float m_gridPadding = 2f;
+	private float m_gridPadding = 0.5f;
+	private float m_candySize = 1f;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,15 @@ public class LevelManager : MonoBehaviour {
 		Debug.Log ( "Grid size: " + x + " by " + y + " - rotated by: " + rotation );
 
 		List<object> grid = levelData[ "grid" ] as List<object>;
+		Vector2 offset = new Vector2(
+									( ( ( x * m_candySize ) + ( m_gridPadding * ( x - 1 ) ) ) / 2f ) - ( m_candySize / 2f ),
+									( ( ( y * m_candySize ) + ( m_gridPadding * ( y - 1 ) ) ) / 2f ) - ( m_candySize / 2f )
+							);
+
+		Debug.Log( "Offset: " + offset );
+
+		GameObject currentLevel = new GameObject( " GeneratedLevel" );
+		currentLevel.transform.position = Vector3.zero;
 
 
 		int numTypes = m_candyPrefabList.Count;
@@ -29,20 +39,26 @@ public class LevelManager : MonoBehaviour {
 			List<object> row = grid[ i ] as List<object>;
 			for ( int j = 0; j < x; j++ ) {
 
-				int type = (int)(long)row[ j ] - 1;
+				int type = (int)(long)row[ j ];
 				if ( type < 0 || type >= numTypes  ) { continue; }
 
 				GameObject go = Instantiate( m_candyPrefabList[ type ],
-				                            new Vector3( j * m_gridPadding, i * -m_gridPadding, 0f ), 
-				                            Quaternion.identity ) as GameObject;
+				                            new Vector3( 
+				            					( j * ( m_gridPadding + m_candySize ) ) - offset.x, 
+				            					( i * -( m_gridPadding + m_candySize ) ) + offset.y, 
+				            					0f ), 
+				                            Quaternion.Euler( 0, 0, -rotation ) ) as GameObject;
+
+				go.transform.parent = currentLevel.transform;
 
 				GridObject gridObject = go.GetComponent<GridObject>();
 				gridObject.grid_x = j;
 				gridObject.grid_y = i;
 
-				go.transform.parent = this.transform;
 			}
 		}
+
+		currentLevel.transform.rotation = Quaternion.Euler( 0, 0, rotation );
 	}
 	
 	// Update is called once per frame

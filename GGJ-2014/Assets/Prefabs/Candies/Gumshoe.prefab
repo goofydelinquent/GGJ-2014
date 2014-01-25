@@ -13,8 +13,8 @@ GameObject:
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
-  m_Layer: 9
-  m_Name: Candy2
+  m_Layer: 8
+  m_Name: Gumshoe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 139a8ff3927b6481da9a58ff9dc639e1, type: 2}
+  - {fileID: 2100000, guid: 6255dc7cc0ca34fe89b303d90ec985b9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7339c8747974d4d988a5725b49805628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candyType: 2
+  candyType: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

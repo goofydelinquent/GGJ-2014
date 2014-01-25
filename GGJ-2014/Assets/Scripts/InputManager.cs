@@ -24,9 +24,15 @@ public class InputManager : MonoBehaviour {
 			{
 				Debug.Log( "Collided: " + collider.name );
 				Candy c = collider.GetComponent<Candy>();
+				GridObject go = collider.GetComponent<GridObject>();
 				if ( c != null ) {
 
 
+				}
+
+				if ( go != null ) {
+
+					Debug.Log( go.grid_x + ", " + go.grid_y );
 
 				}
 			}
