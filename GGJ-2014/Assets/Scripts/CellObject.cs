@@ -6,6 +6,7 @@ public class CellObject : MonoBehaviour {
 	public GridObject gridObject;
 	public int grid_x = -1;
 	public int grid_y = -1;
+	public GameObject cell_bg = null;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,7 @@ public class CellObject : MonoBehaviour {
 
 	private bool isEmpty() {
 
-		return (gridObject == null);
+		return ( gridObject == null );
 
 	}
 
@@ -27,6 +28,7 @@ public class CellObject : MonoBehaviour {
 		this.gridObject = obj;
 		obj.transform.parent = this.transform;
 		obj.transform.localPosition = Vector3.zero;
+		cell_bg.SetActive( true );
 	}
 
 	public GridObject removeGridObject() {
