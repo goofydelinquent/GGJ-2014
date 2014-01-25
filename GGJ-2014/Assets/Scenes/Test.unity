@@ -74,6 +74,46 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &163478869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 163478870}
+  - 114: {fileID: 163478871}
+  m_Layer: 0
+  m_Name: InGameCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &163478870
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 163478869}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &163478871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 163478869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce3a572345c5194c8747adc9854ab76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 1255556593}
+  currentSession: {fileID: 0}
 --- !u!1 &487184735
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellObjects: []
   dimension: {x: 0, y: 0}
+  gumShoe: {fileID: 0}
 --- !u!4 &487184737
 Transform:
   m_ObjectHideFlags: 0
@@ -289,7 +330,6 @@ MonoBehaviour:
   - {fileID: 100000, guid: c695eca5a770148bf8fa7698c220f8b0, type: 2}
   - {fileID: 100000, guid: 68a4318377d984d638778f8dbabc6e71, type: 2}
   - {fileID: 100000, guid: 74a27fe43cdfd4d51873304117cf6cdd, type: 2}
-  gridManager: {fileID: 487184736}
 --- !u!4 &1255556594
 Transform:
   m_ObjectHideFlags: 0
