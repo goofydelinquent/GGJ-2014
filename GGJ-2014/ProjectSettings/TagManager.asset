@@ -54,6 +54,10 @@ TagManager:
     userID: 1
     uniqueID: 3363470833
     locked: 0
+  - name: Cells
+    userID: 8
+    uniqueID: 2012892701
+    locked: 0
   - name: Background
     userID: 2
     uniqueID: 1535931219
@@ -65,6 +69,10 @@ TagManager:
   - name: Foreground
     userID: 3
     uniqueID: 1024582385
+    locked: 0
+  - name: Enemies
+    userID: 7
+    uniqueID: 1006420505
     locked: 0
   - name: HatStache
     userID: 6
