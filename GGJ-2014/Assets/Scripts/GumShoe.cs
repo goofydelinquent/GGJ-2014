@@ -96,7 +96,10 @@ public class GumShoe : GridObject {
 		isEating = false;
 
 		if( currentCandy == CandyType.CANDYTYPE_KING ){
-			InGameCore.Instance.LevelFinished();
+			InGameCore.Instance.currentSession.PurgeMoves();
+
+			if( InGameCore.Instance.currentSession.NoMoreKings() )
+				InGameCore.Instance.LevelFinished();
 		}
 	}
 }

@@ -40,6 +40,10 @@ public class Session : MonoBehaviour {
 		}
 	}
 
+	public bool NoMoreKings(){
+		return moves.Count == 0;
+	}
+
 	private void OnMovesSatisfied(){
 		//moves satisfied event
 		Debug.Log("Moves Satisfied");
