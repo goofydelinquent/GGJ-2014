@@ -75,7 +75,7 @@ public class NarrationManager : MonoBehaviour {
 			m_currentIndex++;
 
 			if ( m_currentIndex >= m_narrations.Count ) {
-				//TODO load next
+
 				Application.LoadLevel("test");
 				return;
 			}

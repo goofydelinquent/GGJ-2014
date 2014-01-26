@@ -90,6 +90,8 @@ public class GumShoe : GridObject {
 		gumShoeCell.removeGridObject();
 		m_targetCell.addGridObject( this );
 
+		m_targetCell = null;
+
 		Destroy( go.gameObject );
 		Destroy( oldBody.gameObject );
 
