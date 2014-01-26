@@ -22,7 +22,7 @@ public class Parallaxer : MonoBehaviour {
 			Vector3 curPos = current.transform.position;
 			Vector3 newPosition = new Vector3( 
 			                                  Mathf.Lerp( curPos.x, position.x * ( parallaxFactor * i ), 0.6f ),
-			                                  Mathf.Lerp( curPox.y, position.y * (parallaxFactor * i ), 0.6f ),
+			                                  Mathf.Lerp( curPos.y, position.y * (parallaxFactor * i ), 0.6f ),
 			                                  current.transform.position.z );
 
 			current.transform.position = newPosition;
