@@ -26,7 +26,20 @@ public class InGameCore : MonoBehaviour
 	public bool debug = true;
 	public string debugLevel = "Levels/4x4/1";
 
+	public SceneFadeInOut fader;
+
 	//public UnityEngine.Random ran = new UnityEngine.Random();
+
+	public AudioSource sfxSource;
+	public AudioSource narrationSource;
+
+	//private AudioClip sfxIntro;
+	[SerializeField]private AudioClip[] sfxIdle;
+	[SerializeField]private AudioClip sfxFail;
+	[SerializeField]private AudioClip sfxReset;
+	[SerializeField]private AudioClip sfxClick;
+	[SerializeField]private AudioClip sfxEatingTime;
+	
 
 	private static InGameCore _instance = null;
     public static InGameCore Instance { get {
@@ -45,7 +58,42 @@ public class InGameCore : MonoBehaviour
 		Next ();
 
 	}
-	
+
+	public void PlaySfx(string name){
+		return;
+		sfxSource.Stop();
+
+		if(name == "IDLE"){
+			int idx = UnityEngine.Random.Range( 0, sfxIdle.Length -1 );
+			narrationSource.clip = sfxIdle[idx];
+			narrationSource.Play();
+
+		}
+
+		if( name == "FAIL" ){
+			sfxSource.clip = sfxFail;
+			sfxSource.Play();
+		}
+
+		if( name == "CLICK" ){
+			sfxSource.clip = this.sfxClick;
+			sfxSource.Play();
+		}
+
+		if( name == "RESET" ){
+			narrationSource.clip = sfxReset;
+			narrationSource.Play();
+		} 
+
+		if( name == "EATTIME" ){
+			narrationSource.clip = sfxEatingTime;
+			narrationSource.Play();
+		}
+
+
+
+	}
+
 	private void Run(string level)
 	{
 		GameObject go = new GameObject("Session");
@@ -108,7 +156,7 @@ public class InGameCore : MonoBehaviour
 	}
 
 	public void Reset(){
-
+		InGameCore.Instance.PlaySfx("RESET");
 		if( currentSession != null ){
 			Destroy( currentSession.gameObject );
 		}
@@ -122,7 +170,13 @@ public class InGameCore : MonoBehaviour
 
 	IEnumerator CoLevelFinished()
 	{
+		this.currentSession.gridManager.OnLevelFinished();
+
 		yield return new WaitForSeconds( 1 );
+
+		//fader.StartScene();
+		//yield return new WaitForSeconds( 1 );
+		//fader.EndScene();
 
 		this.Next();
 	}

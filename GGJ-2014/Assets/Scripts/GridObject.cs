@@ -7,7 +7,9 @@ public class GridObject : MonoBehaviour {
 	//public int grid_y = -1;
 
 	public GridObjectType type;
-
+	public virtual void OnIntro(){}
+	public virtual void Jump(){}
+	public virtual void Die(){}
 
 }
 

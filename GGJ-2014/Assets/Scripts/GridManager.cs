@@ -12,12 +12,30 @@ public class GridManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		InvokeRepeating( "OnIdleJump" , 5 , 1 );
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void OnLevelFinished(){
+		Debug.Log("OnDSSDSD");
+
+		foreach( CellObject obj in cellObjects ){
+			
+			//if( UnityEngine.Random.Range( 0, 100 ) < 5 ) 
+			obj.Die();
+		}
+	}
+
+	private void OnIdleJump(){
+		foreach( CellObject obj in cellObjects ){
+
+			if( UnityEngine.Random.Range( 0, 100 ) < 5 ) 
+				obj.Jump();
+		}
 	}
 
 	public void addCellObject(CellObject obj,int col,int row){
@@ -44,7 +62,7 @@ public class GridManager : MonoBehaviour {
 
 	public void OnClickedCell( CellObject obj ){
 
-		Debug.Log( "Clicked cell at " + obj.grid_x + " " + obj.grid_y );
+		//Debug.Log( "Clicked cell at " + obj.grid_x + " " + obj.grid_y );
 
 		if( gumShoe.isEating ) return;
 

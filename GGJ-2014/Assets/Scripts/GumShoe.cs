@@ -54,7 +54,7 @@ public class GumShoe : GridObject {
 		} else if ( currentCandy == CandyType.CANDYTYPE_1 && p_candy.candyType == CandyType.CANDYTYPE_3 ) {
 			return true;
 		}
-
+		InGameCore.Instance.PlaySfx("FAIL");
 		return false;
 	}
 

@@ -29,6 +29,22 @@ public class CellObject : MonoBehaviour {
 		obj.transform.parent = this.transform;
 		obj.transform.localPosition = Vector3.zero;
 		cell_bg.SetActive( true );
+
+		obj.OnIntro();
+	}
+
+	public void Jump(){
+		if( isEmpty() ) return;
+		if( gridObject.type != GridObjectType.GRIDOBJECTTYPE_CANDY ) return;
+
+		gridObject.Jump();
+	}
+
+	public void Die(){
+		if( isEmpty() ) return;
+		if( gridObject.type != GridObjectType.GRIDOBJECTTYPE_CANDY ) return;
+		
+		gridObject.Die();
 	}
 
 	public GridObject removeGridObject() {
