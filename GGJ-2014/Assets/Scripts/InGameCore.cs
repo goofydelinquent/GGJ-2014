@@ -26,6 +26,8 @@ public class InGameCore : MonoBehaviour
 	public bool debug = true;
 	public string debugLevel = "Levels/4x4/1";
 
+	public SceneFadeInOut fader;
+
 	//public UnityEngine.Random ran = new UnityEngine.Random();
 
 	private static InGameCore _instance = null;
@@ -122,7 +124,13 @@ public class InGameCore : MonoBehaviour
 
 	IEnumerator CoLevelFinished()
 	{
+		this.currentSession.gridManager.OnLevelFinished();
+
 		yield return new WaitForSeconds( 1 );
+
+		//fader.StartScene();
+		//yield return new WaitForSeconds( 1 );
+		//fader.EndScene();
 
 		this.Next();
 	}
