@@ -197,12 +197,12 @@ public class InputManager : MonoBehaviour {
 		if ( collider != null  ){
 
 			if ( collider.name == "reset" ) {
-				
+				InGameCore.Instance.PlaySfx("CLICK");
 				InGameCore.Instance.Reset();
 				return null;
 				
 			} else if ( collider.name == "levelselect" ) {
-
+				InGameCore.Instance.PlaySfx("CLICK");
 				Application.LoadLevel( "Levelselection" );
 				return null;
 

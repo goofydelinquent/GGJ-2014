@@ -65,8 +65,8 @@ public class InGameCore : MonoBehaviour
 	}
 
 	public void PlaySfx(string name){
-		return;
-		sfxSource.Stop();
+		//return;
+		//sfxSource.Stop();
 
 		if(name == "IDLE"){
 			int idx = UnityEngine.Random.Range( 0, sfxIdle.Length -1 );
@@ -74,16 +74,18 @@ public class InGameCore : MonoBehaviour
 			narrationSource.Play();
 
 		}
+		
+		if( name == "CLICK" ){
+			sfxSource.clip = this.sfxClick;
+			sfxSource.Play();
+		}
+		return;
 
 		if( name == "FAIL" ){
 			sfxSource.clip = sfxFail;
 			sfxSource.Play();
 		}
 
-		if( name == "CLICK" ){
-			sfxSource.clip = this.sfxClick;
-			sfxSource.Play();
-		}
 
 		if( name == "RESET" ){
 			narrationSource.clip = sfxReset;

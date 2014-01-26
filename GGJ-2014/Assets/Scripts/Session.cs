@@ -20,7 +20,7 @@ public class Session : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating( "OnIdleSFX" , 8 , 30 );
+		InvokeRepeating( "OnIdleSFX" , 6 , 15 );
 	}
 
 	public void OnIdleSFX(){
@@ -38,6 +38,11 @@ public class Session : MonoBehaviour {
 
 	public void PurgeMoves(){
 		moves.RemoveAt(0);
+
+		if( moves.Count > 0 ){
+			int req = (int)(long)moves[0];
+			InGameCore.Instance.UpdateDevourText(req);
+		}
 	}
 
 	public void IncrementMoves(){
@@ -65,7 +70,7 @@ public class Session : MonoBehaviour {
 	public bool IsMovesSatisfied()
 	{
 		Debug.Log ("Count " + this.moves);
-		return( this.currentMoves >= 2 /*(int)(long)moves[this.movesIndex] */ );
+		return( this.currentMoves >= (int)(long)moves[this.movesIndex]  );
 		
 	}
 
