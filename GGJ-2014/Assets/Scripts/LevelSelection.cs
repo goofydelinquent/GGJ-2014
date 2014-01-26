@@ -6,7 +6,8 @@ public class LevelSelection : MonoBehaviour {
 
 	const string pre = "Levels/";
 
-
+	public AudioSource sfxSource;
+	public AudioClip sfxClick;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +25,10 @@ public class LevelSelection : MonoBehaviour {
 			Vector2 point = new Vector2( worldPoint.x, worldPoint.y );
 			Collider2D collider = Physics2D.OverlapPoint(point, layer );
 			if ( collider != null  ){
-				
+
+				sfxSource.clip = sfxClick;
+				sfxSource.Play();
+
 				if ( collider.name == "1" ) {
 					OnClicked4x4();
 				}

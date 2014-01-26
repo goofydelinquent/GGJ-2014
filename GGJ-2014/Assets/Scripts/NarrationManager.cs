@@ -19,6 +19,7 @@ public class NarrationManager : MonoBehaviour {
 	public static int narrationIndex = 1;
 
 
+
 	// Use this for initialization
 	void Start () 
 	{

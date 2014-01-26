@@ -13,6 +13,7 @@ public class GridManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		InvokeRepeating( "OnIdleJump" , 5 , 1 );
+	
 	}
 	
 	// Update is called once per frame
