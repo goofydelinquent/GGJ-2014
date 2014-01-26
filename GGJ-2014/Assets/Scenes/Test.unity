@@ -1101,7 +1101,7 @@ MonoBehaviour:
   - {fileID: 1309538369}
   - {fileID: 1595507132}
   - {fileID: 1032304735}
-  parallaxFactor: .300000012
+  parallaxFactor: .0500000007
 --- !u!4 &1826126179
 Transform:
   m_ObjectHideFlags: 0
@@ -1232,6 +1232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_candyLayer: Candies
   m_uiLayer: UI
+  m_helpToggleWindow: {fileID: 0}
 --- !u!4 &2133013800
 Transform:
   m_ObjectHideFlags: 0
