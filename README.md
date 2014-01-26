@@ -18,13 +18,14 @@ Programming:
 Paolo Suarez
 Richard Locsin
 
-Voice & Special Thanks to: 
+Voice: 
 Francis Kline Talladen
-
-Sound:
-sfxr
 
 Music:
 Persistent Chase
 JamesBrownYou 
 http://freegamesound.com/
+
+Special Thanks:
+Francis Kline Talladen
+Wilson Cenzon
