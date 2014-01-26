@@ -20,9 +20,13 @@ public class Session : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-
+		InvokeRepeating( "OnIdleSFX" , 8 , 30 );
 	}
-	
+
+	public void OnIdleSFX(){
+		InGameCore.Instance.PlaySfx("IDLE");
+	}
+
 	// Update is called once per frame
 	void Update () {
 	}
@@ -47,6 +51,7 @@ public class Session : MonoBehaviour {
 	private void OnMovesSatisfied(){
 		//moves satisfied event
 		Debug.Log("Moves Satisfied");
+		InGameCore.Instance.PlaySfx("EATTIME");
 		canEatKing = true;
 	}
 

@@ -40,19 +40,181 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: b2300e3f7f1d1a94ea8a6f4d5e0df5e8, type: 2}
   sprites:
-  - name: candymachine
+  - name: 8
+    outer:
+      serializedVersion: 2
+      x: 961
+      y: 896
+      width: 53
+      height: 22
+    inner:
+      serializedVersion: 2
+      x: 961
+      y: 896
+      width: 53
+      height: 22
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: 5
+    outer:
+      serializedVersion: 2
+      x: 961
+      y: 851
+      width: 51
+      height: 22
+    inner:
+      serializedVersion: 2
+      x: 961
+      y: 851
+      width: 51
+      height: 22
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: box
+    outer:
+      serializedVersion: 2
+      x: 961
+      y: 964
+      width: 61
+      height: 60
+    inner:
+      serializedVersion: 2
+      x: 961
+      y: 964
+      width: 61
+      height: 60
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: 6
+    outer:
+      serializedVersion: 2
+      x: 961
+      y: 919
+      width: 54
+      height: 22
+    inner:
+      serializedVersion: 2
+      x: 961
+      y: 919
+      width: 54
+      height: 22
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: candymachine_soon
     outer:
       serializedVersion: 2
       x: 0
-      y: 26
-      width: 130
-      height: 230
+      y: 155
+      width: 141
+      height: 268
     inner:
       serializedVersion: 2
       x: 0
-      y: 26
-      width: 130
-      height: 230
+      y: 155
+      width: 141
+      height: 268
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: 7
+    outer:
+      serializedVersion: 2
+      x: 961
+      y: 874
+      width: 54
+      height: 21
+    inner:
+      serializedVersion: 2
+      x: 961
+      y: 874
+      width: 54
+      height: 21
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: candymachine
+    outer:
+      serializedVersion: 2
+      x: 142
+      y: 155
+      width: 141
+      height: 268
+    inner:
+      serializedVersion: 2
+      x: 142
+      y: 155
+      width: 141
+      height: 268
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: 4
+    outer:
+      serializedVersion: 2
+      x: 961
+      y: 942
+      width: 58
+      height: 21
+    inner:
+      serializedVersion: 2
+      x: 961
+      y: 942
+      width: 58
+      height: 21
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: btn_replay
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 18
+      width: 135
+      height: 136
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 18
+      width: 135
+      height: 136
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: levelselect_bg
+    outer:
+      serializedVersion: 2
+      x: 0
+      y: 424
+      width: 960
+      height: 600
+    inner:
+      serializedVersion: 2
+      x: 0
+      y: 424
+      width: 960
+      height: 600
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
