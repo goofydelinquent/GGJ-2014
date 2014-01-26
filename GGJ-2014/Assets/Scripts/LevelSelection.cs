@@ -16,7 +16,37 @@ public class LevelSelection : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+		if( Input.GetMouseButtonDown(0))
+		{
+			Vector3 worldPoint = Camera.main.ScreenToWorldPoint( Input.mousePosition );
+			int layer = 1 << LayerMask.NameToLayer( "Default" );
+			Vector2 point = new Vector2( worldPoint.x, worldPoint.y );
+			Collider2D collider = Physics2D.OverlapPoint(point, layer );
+			if ( collider != null  ){
+				
+				if ( collider.name == "1" ) {
+					OnClicked4x4();
+				}
+
+				if ( collider.name == "2" ) {
+					OnClicked5x5();
+				}
+				if ( collider.name == "3" ) {
+					OnClicked6x6();
+				}
+				if ( collider.name == "4" ) {
+					OnClicked7x7();
+				}
+				if ( collider.name == "5" ) {
+					OnClicked8x8();
+				}
+			}
+		}
+
+
+
+
 	}
 
 	private void OnClicked4x4(){
