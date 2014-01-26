@@ -201,6 +201,11 @@ public class InputManager : MonoBehaviour {
 				InGameCore.Instance.Reset();
 				return null;
 				
+			} else if ( collider.name == "levelselect" ) {
+
+				Application.LoadLevel( "Levelselection" );
+				return null;
+
 			}
 
 			CellObject go = collider.GetComponent<CellObject>();

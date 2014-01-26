@@ -19,9 +19,10 @@ public class Parallaxer : MonoBehaviour {
 		for( int i = 0; i < layers.Count; i++ ) {
 
 			GameObject current = layers[ i ];
+			Vector3 curPos = current.transform.position;
 			Vector3 newPosition = new Vector3( 
-			                                  position.x * ( parallaxFactor * i ),
-			                                  position.y * (parallaxFactor * i ),
+			                                  Mathf.Lerp( curPos.x, position.x * ( parallaxFactor * i ), 0.6f ),
+			                                  Mathf.Lerp( curPox.y, position.y * (parallaxFactor * i ), 0.6f ),
 			                                  current.transform.position.z );
 
 			current.transform.position = newPosition;
