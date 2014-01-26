@@ -168,6 +168,65 @@ MonoBehaviour:
   levelQueue: []
   debug: 0
   debugLevel: Levels/4x4/1
+  fader: {fileID: 0}
+  sfxSource: {fileID: 0}
+  narrationSource: {fileID: 0}
+  sfxIdle: []
+  sfxFail: {fileID: 0}
+  sfxReset: {fileID: 0}
+  sfxClick: {fileID: 0}
+  sfxEatingTime: {fileID: 0}
+  devourText: {fileID: 255154336}
+--- !u!1 &255154335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 255154337}
+  - 132: {fileID: 255154336}
+  m_Layer: 0
+  m_Name: GUI Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!132 &255154336
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255154335}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 'Candies to devour : 2'
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: 47f1bf6bd52264f59a7cb9f36d94eee4, type: 3}
+  m_Material: {fileID: 2100000, guid: 47f1bf6bd52264f59a7cb9f36d94eee4, type: 3}
+  m_FontSize: 25
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &255154337
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255154335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0210393667, y: .980899096, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &417411945
 GameObject:
   m_ObjectHideFlags: 0

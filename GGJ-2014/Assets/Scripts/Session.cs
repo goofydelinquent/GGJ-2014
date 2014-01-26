@@ -31,12 +31,19 @@ public class Session : MonoBehaviour {
 	void Update () {
 	}
 
+	public void Init(){
+		int req = (int)(long)moves[0];
+		InGameCore.Instance.UpdateDevourText(req);
+	}
+
 	public void PurgeMoves(){
 		moves.RemoveAt(0);
 	}
 
 	public void IncrementMoves(){
 		this.currentMoves++;
+		InGameCore.Instance.UpdateDevourText( Mathf.Max ((int)(long)moves[this.movesIndex] - this.currentMoves,0) );
+
 		if( !canEatKing ){
 			if( IsMovesSatisfied() ){
 				OnMovesSatisfied();

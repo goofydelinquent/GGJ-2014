@@ -39,7 +39,8 @@ public class InGameCore : MonoBehaviour
 	[SerializeField]private AudioClip sfxReset;
 	[SerializeField]private AudioClip sfxClick;
 	[SerializeField]private AudioClip sfxEatingTime;
-	
+
+	public GUIText devourText;
 
 	private static InGameCore _instance = null;
     public static InGameCore Instance { get {
@@ -57,6 +58,10 @@ public class InGameCore : MonoBehaviour
 		FillUpLevelQueue( InGameCore.levelToLoad );
 		Next ();
 
+	}
+
+	public void UpdateDevourText(int count){
+		devourText.text = "Candies to devour: " + count;
 	}
 
 	public void PlaySfx(string name){

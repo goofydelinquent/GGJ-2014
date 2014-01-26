@@ -31,6 +31,7 @@ public class LevelManager : MonoBehaviour {
 		int y = (int)(long)meta[ "grid_y" ];
 	    List<object> moves = meta[ "moves" ] as List<object>;
 		session.moves = moves;
+		session.Init();
 
 
 		//var target = origList.ConvertAll(x => (TargetType)x);
