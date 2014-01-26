@@ -45,6 +45,10 @@ public class LevelSelection : MonoBehaviour {
 				if ( collider.name == "5" ) {
 					OnClicked8x8();
 				}
+
+				if ( collider.name == "btn_back" ) {
+					Application.LoadLevel("TitleScreen");
+				}
 			}
 		}
 
