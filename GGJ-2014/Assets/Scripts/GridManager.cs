@@ -8,6 +8,7 @@ public class GridManager : MonoBehaviour {
 	public Vector2 dimension = Vector2.zero;
 
 	public GumShoe gumShoe;
+	public Shaker shaker;
 
 	// Use this for initialization
 	void Start () {
@@ -46,7 +47,14 @@ public class GridManager : MonoBehaviour {
 
 	public void addGridObject(GridObject obj,int col,int row){
 		cellObjects[GridManager.Get1DCoordinate(this.dimension,col,row)].addGridObject(obj); 
-	} 
+	}
+
+	public GridObject getGridObjectAt( int col, int row ) {
+		if ( col < 0 || row < 0 ) { return null; }
+		int coordinate = GridManager.Get1DCoordinate(this.dimension,col,row);
+		if ( coordinate >= cellObjects.Count ) { return null; }
+		return cellObjects[ coordinate ].gridObject; 
+	}
 
 	public static int Get1DCoordinate(Vector2 dimension,int col,int row){
 		return (row * (int)dimension.y) + col;
@@ -75,6 +83,33 @@ public class GridManager : MonoBehaviour {
 			gumShoe.Consume( candy );
 
 			InGameCore.Instance.currentSession.IncrementMoves();
+
+			// Highlight the reset button
+			if ( ! InGameCore.Instance.currentSession.NoMoreKings() ) {
+				int[,] check = new int[,] { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
+
+				bool hasNext = false;
+				for( int i = 0; i < 4; i++ ) {
+
+					GridObject go = this.getGridObjectAt( check[i, 0] + obj.grid_x, check[i, 1] + obj.grid_y );
+					if ( go == null ) { continue; }
+
+					Candy neighborCheck = go as Candy;
+					if ( neighborCheck == null ) { continue; }
+					if ( gumShoe.CanConsume( neighborCheck ) ) { 
+						hasNext = true;
+						break;
+					}
+				}
+
+				if ( !hasNext && shaker != null ) {
+
+					shaker.bIsEnabled = true;
+
+				}
+			}
+
+
 		} else {
 
 			Debug.Log( "Cannot Consume => " + ((int)gumShoe.currentCandy) + " " + ((int)candy.candyType ));

@@ -62,13 +62,13 @@ TagManager:
     userID: 8
     uniqueID: 2012892701
     locked: 0
-  - name: Character
-    userID: 4
-    uniqueID: 2511236001
-    locked: 0
   - name: Enemies
     userID: 7
     uniqueID: 1006420505
+    locked: 0
+  - name: Character
+    userID: 4
+    uniqueID: 2511236001
     locked: 0
   - name: HatStache
     userID: 6
