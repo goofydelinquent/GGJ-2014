@@ -5,6 +5,7 @@ public class InputManager : MonoBehaviour {
 
 	public string m_candyLayer = "Candies";
 	public string m_uiLayer = "UI";
+	public ToggleWindow m_helpToggleWindow = null;
 
 	void Start (){
 	
@@ -135,18 +136,45 @@ public class InputManager : MonoBehaviour {
 			}
 
 			if( Input.GetMouseButtonUp(0) ){
-				mousePhase = MousePhase.Normal_Phase; break;
+				mousePhase = MousePhase.Normal_Phase; 
+				break;
 			}
 			CellObject obj = CheckCollision( Input.mousePosition );
 				if( obj!=null ){
 					obj.OnClick();
 				}
-				
-		
 			}
 			break;
 	
 		}
+
+		//Special Case for help window
+		if ( Input.GetMouseButtonUp( 0 ) )
+		{
+			Vector3 worldPoint = Camera.main.ScreenToWorldPoint( Input.mousePosition );
+			
+			int layer = 1 << LayerMask.NameToLayer( m_candyLayer );
+			Vector2 point = new Vector2( worldPoint.x, worldPoint.y );
+			Collider2D collider = Physics2D.OverlapPoint(point, layer );
+
+			bool didTriggerHelp = false;
+			if ( collider != null  ){
+				
+				if ( collider.name == "help" )
+				{
+					m_helpToggleWindow.bIsEnabled = !m_helpToggleWindow.bIsEnabled;
+					didTriggerHelp = m_helpToggleWindow.bIsEnabled;
+
+				}
+			}
+
+			if ( ! didTriggerHelp ) {
+
+				m_helpToggleWindow.bIsEnabled = false;
+
+			}
+		}
+
 
 		/*
 		// 0 - Left, 1 - Right, 2 - Middle 
@@ -196,24 +224,20 @@ public class InputManager : MonoBehaviour {
 		Collider2D collider = Physics2D.OverlapPoint(point, layer );
 		if ( collider != null  ){
 
-			if ( collider.name == "reset" ) {
-				
-				InGameCore.Instance.Reset();
-				return null;
-				
-			} else if ( collider.name == "levelselect" ) {
-
-				Application.LoadLevel( "Levelselection" );
-				return null;
-
+			switch ( collider.name )
+			{
+				case "reset":
+					InGameCore.Instance.Reset();
+					return null;
+				case "levelselect":
+					Application.LoadLevel( "Levelselection" );
+					return null;
 			}
 
 			CellObject go = collider.GetComponent<CellObject>();
-
-
-
 			return go;
-		}
+
+		} 
 
 		return null;
 	}
